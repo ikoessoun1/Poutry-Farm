@@ -17865,7 +17865,7 @@ fieldset:disabled .btn {
 :root {
     --primary-color: #8f2e37;
     --font-color: #58595b;
-    --bg-color: #fff;
+    --bg-color: #dddddd;
     --heading-color: #000000;
     --border-radius: 6px;
     --border-radius-full: 35px;
@@ -17918,7 +17918,6 @@ html {
     font-family: 'Outfit', sans-serif;
 
 }
-
 body a,
 button,
 .btn {
@@ -21533,7 +21532,7 @@ form.subscribe-wthree input:focus {
         font-size: auto; 
     }
     .navbar .navbar-brand {
-        font-size: 18px;
+        font-size: 14px;
     }
     .logo{
         width: 15%;
