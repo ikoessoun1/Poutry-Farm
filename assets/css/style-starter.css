@@ -1,7 +1,4 @@
-/*--
-Author: W3layouts
-Author URL: http://w3layouts.com
---*/
+
 @charset "UTF-8";
 
 /*!
@@ -21489,6 +21486,10 @@ form.subscribe-wthree input:focus {
 #movetop:hover {
     opacity: .8;
 }
+.logo{
+    width: 25%;
+    height: 25%;
+}
 
 /* //movetop styling */
 @media screen and (max-width: 1190px) {}
@@ -21531,8 +21532,12 @@ form.subscribe-wthree input:focus {
     h1 {
         font-size: auto; 
     }
+    .navbar .navbar-brand {
+        font-size: 18px;
+    }
     .logo{
-        display: none;
+        width: 15%;
+        height: 15%;
     }
 }
 /*--//Footer-9--*/
