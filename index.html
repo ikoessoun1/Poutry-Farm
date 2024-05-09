@@ -12,6 +12,7 @@
     <!--//google-fonts -->
     <!--/Template-CSS -->
     <link rel="stylesheet" href="assets/css/style-starter.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
     <!--//Template-CSS -->
 </head>
 
@@ -84,7 +85,7 @@
                             <div class="banner-info header-hero-19">
                                 <p class="w3hny-tag" style="color:  #d48e52;" >Since 2017</p>
                                 <h3 class="title-hero-19">Quietly Brilliant.</h3>
-                                <a href="about.html" class="btn btn-style btn-primary mt-4">Read More </a>
+                                <a  class="btn btn-style btn-primary mt-4">Read More </a>
                             </div>
                             <div class="banner-left position-relative mt-5">
                                 <a href="#small-dialog" class="popup-with-zoom-anim play-view text-center position-absolute">
@@ -92,11 +93,10 @@
                                         <span class="fa fa-play"></span>
                                     </span>
                                 </a>
-                                <!-- dialog itself, mfp-hide class is required to make dialog hidden --
+                                <!-- dialog itself, mfp-hide class is required to make dialog hidden -->
                                 <div id="small-dialog" class="zoom-anim-dialog mfp-hide">
-                                  <iframe src="https://player.vimeo.com/video/26489864?h=0cb4432fb5" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                                    <iframe id="video" src="https://www.youtube.com/embed/HK6y8DAPN_0?si=wlo45OAyGFdVbrFb" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
                                 </div>
-								<!-- dialog itself, mfp-hide class is required to make dialog hidden -->
                             </div>
                         </div>
                     </div>
@@ -619,7 +619,31 @@
 });
 
     </script>
-
+<!-- Include jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- Include Magnific Popup JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('.popup-with-zoom-anim').magnificPopup({
+            type: 'inline',
+            preloader: false,
+            focus: '#video',
+            callbacks: {
+                open: function() {
+                    // Autoplay video when popup opens
+                    var iframe = this.content.find('iframe');
+                    iframe.attr('src', iframe.attr('src') + '&autoplay=1');
+                },
+                close: function() {
+                    // Reset video src to stop playing when popup closes
+                    var iframe = this.content.find('iframe');
+                    iframe.attr('src', iframe.attr('src').replace('&autoplay=1', ''));
+                }
+            }
+        });
+    });
+</script>
 </body>
 
 </html>
